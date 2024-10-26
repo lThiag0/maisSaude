@@ -45,7 +45,7 @@ Tabela de conteúdos
 ## 💻 Sobre o projeto
 
 +Saude - é uma forma de gerenciar cadastros de pessoas de maneira prática rápido e fácil.
-Criado pela turma de ADS UniNassau 2024 para o proejeto de extenção.
+Criado pela turma de ADS UniNassau 2024 para o projeto de extenção.
 
 ---
 
@@ -78,14 +78,15 @@ Criado pela turma de ADS UniNassau 2024 para o proejeto de extenção.
     - Versão do aplicativo
   - [x] Sair do aplicativo 
     - fechar o aplicativo
-- [x] Logs do sistema:
-  - Mostra todos os logs do sistema
+  - [x] Logs do sistema:
+    - Mostra todos os logs do sistema
 
 ---
 
 ## 🎨 Layout
 
 O layout da aplicação é simples e prático.
+Identidade visual feita por Elton.
 
 ### Desktop
 
@@ -130,10 +131,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 [![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/thiago-araujo-furtado/)](https://www.linkedin.com/in/thiago-araujo-furtado/) 
 [![Gmail Badge](https://img.shields.io/badge/-thiaguinhofurtado07@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:thiaguinhofurtado07@gmail.com)](mailto:thiaguinhofurtado07@gmail.com)
 
+AND
+- Gabriel Lopes, Carlos Ellyoram, Rian Santos, Moises, Ana Beatriz, Eduardo, Rayson, Eliabe e Elton
+
 ---
 
 ## 📝 Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-Feito com ❤️ por Thiago Araujo 👋🏽 [Entre em contato!](https://www.linkedin.com/in/thiago-araujo-furtado/)
+Feito com ❤️ por Thiago Araujo e Turma de ADS 2024 👋🏽 [Entre em contato!](https://www.linkedin.com/in/thiago-araujo-furtado/)
