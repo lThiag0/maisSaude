@@ -13,7 +13,7 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/lThiag0/maisSaude">
   
-  <a href="https://github.com/lThiag0/Yugioh-Card-Maker/commits/master">
+  <a href="https://github.com/lThiag0/maisSaude/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lThiag0/maisSaude">
   </a>
     
@@ -86,7 +86,7 @@ Criado pela turma de ADS UniNassau 2024 para o projeto de extenção.
 ## 🎨 Layout
 
 O layout da aplicação é simples e prático.
-Identidade visual feita por Elton.
+Identidade visual feita por Eliabe.
 
 ### Desktop
 
