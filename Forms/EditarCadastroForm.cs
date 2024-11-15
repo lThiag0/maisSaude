@@ -239,7 +239,7 @@ namespace maisSaude.Forms
                 case DialogResult.Yes:
                     LimparEditar();
                     TextExtraido.Items.Clear();
-                    if (!Directory.Exists(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml"))
+                    if (File.Exists(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml"))
                     {
                         //groupBox1.Enabled = false;
                         XDocument root = XDocument.Load(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");

@@ -32,9 +32,16 @@ namespace CuidaMais.Forms
 
         private int quantID()
         {
-            XDocument xdoc = XDocument.Load(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
-            int countElement = xdoc.Descendants("pessoa").Count();
-            return countElement + 1;
+            if (File.Exists(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml"))
+            {
+                XDocument xdoc = XDocument.Load(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
+                int countElement = xdoc.Descendants("pessoa").Count();
+                return countElement + 1;
+            }
+            else
+            {
+                return 1;
+            }
         }
 
         private void buttonUploadFoto_Click(object sender, EventArgs e)
@@ -185,8 +192,6 @@ namespace CuidaMais.Forms
                     try
                     {
                         pictureBoxFoto3x4.Image.Save(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg", ImageFormat.Jpeg);
-                        pictureBoxFoto3x4.Image.Dispose();
-                        pictureBoxFoto3x4.Image = null;
                         formInicial.adicionarConsoleLog("Foto 3x4 salva com sucesso");
                     }
                     catch (Exception ex)
@@ -235,8 +240,8 @@ namespace CuidaMais.Forms
                     try
                     {
                         pictureBoxFoto3x4.Image.Save(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg", ImageFormat.Jpeg);
-                        pictureBoxFoto3x4.Image.Dispose();
-                        pictureBoxFoto3x4.Image = null;
+                        //pictureBoxFoto3x4.Image.Dispose();
+                        //pictureBoxFoto3x4.Image = null;
                         formInicial.adicionarConsoleLog("Foto 3x4 salva com sucesso");
                     }
                     catch (Exception ex)

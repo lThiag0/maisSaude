@@ -17,7 +17,7 @@
             com versões anteriores.
         -->
         <!--<requestedExecutionLevel level="asInvoker" uiAccess="false" /> -->
-		  <!--<requestedExecutionLevel level="requireAdministrator" uiAccess="false" /> Força a iniciar como administrador -->
+		  <requestedExecutionLevel level="requireAdministrator" uiAccess="false" /> <!-- Força a iniciar como administrador -->
       </requestedPrivileges>
     </security>
   </trustInfo>
