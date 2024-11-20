@@ -70,6 +70,7 @@
             // 
             // buttonTodosCadastros
             // 
+            buttonTodosCadastros.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonTodosCadastros.BackColor = Color.SteelBlue;
             buttonTodosCadastros.FlatStyle = FlatStyle.Flat;
             buttonTodosCadastros.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -84,6 +85,7 @@
             // 
             // buttonSair
             // 
+            buttonSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonSair.BackColor = Color.Gray;
             buttonSair.FlatStyle = FlatStyle.Flat;
             buttonSair.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -98,6 +100,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(buttonTodos);
             groupBox1.Controls.Add(buttonDeletar);
             groupBox1.Controls.Add(buttonExporta);
@@ -116,6 +119,7 @@
             // 
             // buttonTodos
             // 
+            buttonTodos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonTodos.BackColor = Color.LightSeaGreen;
             buttonTodos.FlatStyle = FlatStyle.Flat;
             buttonTodos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -130,6 +134,7 @@
             // 
             // buttonDeletar
             // 
+            buttonDeletar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonDeletar.BackColor = Color.Red;
             buttonDeletar.FlatStyle = FlatStyle.Flat;
             buttonDeletar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -144,6 +149,7 @@
             // 
             // buttonExporta
             // 
+            buttonExporta.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonExporta.BackColor = Color.FromArgb(99, 231, 95);
             buttonExporta.FlatStyle = FlatStyle.Flat;
             buttonExporta.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -158,6 +164,7 @@
             // 
             // TextExtraido
             // 
+            TextExtraido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             TextExtraido.CheckBoxes = true;
             TextExtraido.Columns.AddRange(new ColumnHeader[] { ID, nome, CPF, cidade, Estado, estadoCivil, dataDeNascimento, profissao, rg, orgaoExpeditor, condSaude, rendimento, apto, medicacoes, alergico, endereco, alergias, data, foto, numero });
             TextExtraido.FullRowSelect = true;
@@ -296,6 +303,7 @@
             // 
             // buttonBuscar
             // 
+            buttonBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonBuscar.BackColor = Color.Orange;
             buttonBuscar.FlatStyle = FlatStyle.Popup;
             buttonBuscar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);

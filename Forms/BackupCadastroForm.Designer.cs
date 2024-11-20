@@ -54,6 +54,7 @@
             // 
             // buttonTodosBackups
             // 
+            buttonTodosBackups.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonTodosBackups.BackColor = Color.SteelBlue;
             buttonTodosBackups.FlatStyle = FlatStyle.Flat;
             buttonTodosBackups.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -68,6 +69,7 @@
             // 
             // buttonSair
             // 
+            buttonSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonSair.BackColor = Color.Gray;
             buttonSair.FlatStyle = FlatStyle.Flat;
             buttonSair.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -82,6 +84,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(buttonPasta);
             groupBox1.Controls.Add(buttonDeletar);
             groupBox1.Controls.Add(buttonImportar);
@@ -95,6 +98,7 @@
             // 
             // buttonPasta
             // 
+            buttonPasta.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonPasta.BackColor = Color.LightSeaGreen;
             buttonPasta.FlatStyle = FlatStyle.Flat;
             buttonPasta.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -109,6 +113,7 @@
             // 
             // buttonDeletar
             // 
+            buttonDeletar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonDeletar.BackColor = Color.Red;
             buttonDeletar.FlatStyle = FlatStyle.Flat;
             buttonDeletar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -123,6 +128,7 @@
             // 
             // buttonImportar
             // 
+            buttonImportar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonImportar.BackColor = Color.FromArgb(99, 231, 95);
             buttonImportar.FlatStyle = FlatStyle.Flat;
             buttonImportar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -137,6 +143,7 @@
             // 
             // TextExtraido
             // 
+            TextExtraido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             TextExtraido.Columns.AddRange(new ColumnHeader[] { nomeArquivo, dataArquivo });
             TextExtraido.FullRowSelect = true;
             TextExtraido.Location = new Point(9, 15);
@@ -184,6 +191,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox2.Controls.Add(comboBoxTipo);
             groupBox2.Controls.Add(label16);
             groupBox2.Controls.Add(carregamentoBarra);
@@ -223,6 +231,7 @@
             // 
             // carregamentoBarra
             // 
+            carregamentoBarra.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             carregamentoBarra.ForeColor = Color.FromArgb(99, 231, 95);
             carregamentoBarra.Location = new Point(520, 13);
             carregamentoBarra.Name = "carregamentoBarra";

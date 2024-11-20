@@ -128,7 +128,7 @@ namespace CuidaMais.Forms
                 textBoxCidade.Text != "" &&
                 boxDataDeNascimento.MaskCompleted &&
                 textBoxProfissao.Text != "" &&
-                boxRg.MaskCompleted  &&
+                boxRg.Text != "" &&
                 textBoxExpeditor.Text != "" &&
                 textBoxEndereco.Text != "" &&
                 comboBoxEstado.SelectedIndex >= 0 &&
@@ -209,7 +209,11 @@ namespace CuidaMais.Forms
                     //Editar documento
                     //XDocument doc = new XDocument();
                     XDocument doc = XDocument.Load(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
-                    doc.Root.Add(
+                    var query = from element in doc.Root.Descendants("pessoa").Where(x => x.Attribute("idcpf").Value == ConverterCPF(boxCpf.Text)) select element;
+
+                    if (query.Count() == 0)
+                    {
+                        doc.Root.Add(
                         new XElement("pessoa",
                             new XAttribute("id", idCadastro.Text),
                             new XAttribute("idcpf", ConverterCPF(boxCpf.Text)),
@@ -235,24 +239,30 @@ namespace CuidaMais.Forms
                             new XElement("foto", Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg"),
                              new XElement("numero", boxNumero.Text)
                             ));
-                    doc.Save(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
+                        doc.Save(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
 
-                    try
-                    {
-                        pictureBoxFoto3x4.Image.Save(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg", ImageFormat.Jpeg);
-                        //pictureBoxFoto3x4.Image.Dispose();
-                        //pictureBoxFoto3x4.Image = null;
-                        formInicial.adicionarConsoleLog("Foto 3x4 salva com sucesso");
+                        try
+                        {
+                            pictureBoxFoto3x4.Image.Save(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg", ImageFormat.Jpeg);
+                            //pictureBoxFoto3x4.Image.Dispose();
+                            //pictureBoxFoto3x4.Image = null;
+                            formInicial.adicionarConsoleLog("Foto 3x4 salva com sucesso");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Erro ao salvar a foto 3x4: " + ex.Message, "Opss, ocorreu um error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            formInicial.adicionarConsoleLog("Erro ao salvar a foto 3x4");
+                        }
+
+                        MessageBox.Show("Cadastro criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        formInicial.adicionarConsoleLog("Cadastro da pessoa criado com sucesso!");
+                        Close();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("Erro ao salvar a foto 3x4: " + ex.Message, "Opss, ocorreu um error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        formInicial.adicionarConsoleLog("Erro ao salvar a foto 3x4");
+                        MessageBox.Show("Esse CPF ja foi cadastrado no sistema!", "Opss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
-                    MessageBox.Show("Cadastro criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    formInicial.adicionarConsoleLog("Cadastro da pessoa criado com sucesso!");
-                    Close();
                 }
             }
             else
@@ -263,16 +273,76 @@ namespace CuidaMais.Forms
 
         private void comboBoxAlergico_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxAlergico.SelectedIndex == 1)
+            if (comboBoxAlergico.SelectedIndex == 1)
             {
                 textBoxAlergias.Enabled = true;
                 textBoxAlergias.Text = "";
-            } 
+            }
             else
             {
                 textBoxAlergias.Enabled = false;
                 textBoxAlergias.Text = "";
             }
+        }
+
+        private void textBoxNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxProfissao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boxRg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
+
+        private void comboBoxCivil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxCidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boxDataDeNascimento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

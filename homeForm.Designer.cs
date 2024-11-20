@@ -47,6 +47,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(consoleLogGeral);
             groupBox1.Controls.Add(buttonExporta);
@@ -59,40 +60,45 @@
             groupBox1.Controls.Add(buttonCadastrar);
             groupBox1.Location = new Point(20, 62);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(460, 278);
+            groupBox1.Size = new Size(529, 278);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label4.BackColor = Color.FromArgb(99, 231, 95);
             label4.BorderStyle = BorderStyle.FixedSingle;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(6, 129);
             label4.Name = "label4";
-            label4.Size = new Size(447, 23);
+            label4.Size = new Size(513, 23);
             label4.TabIndex = 9;
             label4.Text = "Console Logs do Sistema";
             label4.TextAlign = ContentAlignment.MiddleCenter;
+            label4.Click += label4_Click;
             // 
             // consoleLogGeral
             // 
+            consoleLogGeral.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             consoleLogGeral.Location = new Point(6, 150);
             consoleLogGeral.Name = "consoleLogGeral";
             consoleLogGeral.ReadOnly = true;
-            consoleLogGeral.Size = new Size(447, 99);
+            consoleLogGeral.Size = new Size(513, 99);
             consoleLogGeral.TabIndex = 8;
             consoleLogGeral.Text = "";
             // 
             // buttonExporta
             // 
+            buttonExporta.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonExporta.BackColor = Color.FromArgb(72, 216, 209);
             buttonExporta.FlatStyle = FlatStyle.Flat;
             buttonExporta.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonExporta.Location = new Point(308, 22);
+            buttonExporta.Location = new Point(352, 22);
             buttonExporta.Name = "buttonExporta";
-            buttonExporta.Size = new Size(145, 47);
+            buttonExporta.Size = new Size(167, 47);
             buttonExporta.TabIndex = 3;
             buttonExporta.Text = "Exporta Cadastro";
             buttonExporta.UseVisualStyleBackColor = false;
@@ -100,12 +106,12 @@
             // 
             // textVersao
             // 
-            textVersao.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            textVersao.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             textVersao.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textVersao.ForeColor = Color.Red;
             textVersao.Location = new Point(308, 252);
             textVersao.Name = "textVersao";
-            textVersao.Size = new Size(145, 23);
+            textVersao.Size = new Size(211, 23);
             textVersao.TabIndex = 7;
             textVersao.Text = "Versão: 1.0.1.0";
             textVersao.TextAlign = ContentAlignment.MiddleRight;
@@ -124,12 +130,13 @@
             // 
             // buttonSair
             // 
+            buttonSair.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonSair.BackColor = Color.FromArgb(72, 216, 209);
             buttonSair.FlatStyle = FlatStyle.Flat;
             buttonSair.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonSair.Location = new Point(308, 75);
+            buttonSair.Location = new Point(352, 75);
             buttonSair.Name = "buttonSair";
-            buttonSair.Size = new Size(145, 47);
+            buttonSair.Size = new Size(167, 47);
             buttonSair.TabIndex = 5;
             buttonSair.Text = "Sair do Aplicativo";
             buttonSair.UseVisualStyleBackColor = false;
@@ -137,12 +144,13 @@
             // 
             // buttonSobre
             // 
+            buttonSobre.Anchor = AnchorStyles.Top;
             buttonSobre.BackColor = Color.FromArgb(72, 216, 209);
             buttonSobre.FlatStyle = FlatStyle.Flat;
             buttonSobre.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonSobre.Location = new Point(157, 75);
+            buttonSobre.Location = new Point(179, 75);
             buttonSobre.Name = "buttonSobre";
-            buttonSobre.Size = new Size(145, 47);
+            buttonSobre.Size = new Size(167, 47);
             buttonSobre.TabIndex = 4;
             buttonSobre.Text = "Sobre +Saude";
             buttonSobre.UseVisualStyleBackColor = false;
@@ -155,7 +163,7 @@
             buttonBackup.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonBackup.Location = new Point(6, 75);
             buttonBackup.Name = "buttonBackup";
-            buttonBackup.Size = new Size(145, 47);
+            buttonBackup.Size = new Size(167, 47);
             buttonBackup.TabIndex = 2;
             buttonBackup.Text = "Backup de Dados";
             buttonBackup.UseVisualStyleBackColor = false;
@@ -163,12 +171,13 @@
             // 
             // buttonEditar
             // 
+            buttonEditar.Anchor = AnchorStyles.Top;
             buttonEditar.BackColor = Color.FromArgb(72, 216, 209);
             buttonEditar.FlatStyle = FlatStyle.Flat;
             buttonEditar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonEditar.Location = new Point(157, 22);
+            buttonEditar.Location = new Point(179, 22);
             buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(145, 47);
+            buttonEditar.Size = new Size(167, 47);
             buttonEditar.TabIndex = 1;
             buttonEditar.Text = "Editar Cadastro";
             buttonEditar.UseVisualStyleBackColor = false;
@@ -181,7 +190,7 @@
             buttonCadastrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonCadastrar.Location = new Point(6, 22);
             buttonCadastrar.Name = "buttonCadastrar";
-            buttonCadastrar.Size = new Size(145, 47);
+            buttonCadastrar.Size = new Size(167, 47);
             buttonCadastrar.TabIndex = 0;
             buttonCadastrar.Text = "Cadastra Pessoa";
             buttonCadastrar.UseVisualStyleBackColor = false;
@@ -189,10 +198,11 @@
             // 
             // pictureBoxLogo
             // 
+            pictureBoxLogo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBoxLogo.Image = maisSaude.Properties.Resources.Ícone_para_software_;
-            pictureBoxLogo.Location = new Point(138, 12);
+            pictureBoxLogo.Location = new Point(180, 12);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(233, 55);
+            pictureBoxLogo.Size = new Size(230, 55);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLogo.TabIndex = 4;
             pictureBoxLogo.TabStop = false;
@@ -202,7 +212,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(500, 352);
+            ClientSize = new Size(568, 355);
             Controls.Add(pictureBoxLogo);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -210,6 +220,7 @@
             Name = "homeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "+Saude - Inicio";
+            Load += homeForm_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);

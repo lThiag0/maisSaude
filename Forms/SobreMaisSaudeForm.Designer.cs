@@ -42,6 +42,7 @@
             // 
             // pictureBoxLogo
             // 
+            pictureBoxLogo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBoxLogo.Image = Properties.Resources.Ícone_para_software_;
             pictureBoxLogo.Location = new Point(45, 57);
             pictureBoxLogo.Name = "pictureBoxLogo";
@@ -53,18 +54,21 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Calibri", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(45, 9);
             label1.Name = "label1";
-            label1.Size = new Size(311, 45);
+            label1.Size = new Size(259, 45);
             label1.TabIndex = 49;
-            label1.Text = "Sobre o maisSaude";
+            label1.Text = "Sobre o +Saude";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(textVersao);
             groupBox1.Controls.Add(label2);
@@ -76,7 +80,7 @@
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 8.25F, FontStyle.Underline, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(99, 231, 95);
@@ -90,7 +94,7 @@
             // 
             // textVersao
             // 
-            textVersao.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            textVersao.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textVersao.BackColor = Color.Transparent;
             textVersao.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textVersao.ForeColor = Color.Red;
@@ -104,6 +108,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.BackColor = SystemColors.ActiveCaptionText;
             label2.ForeColor = Color.White;
             label2.Location = new Point(6, 13);
@@ -111,9 +116,11 @@
             label2.Size = new Size(299, 192);
             label2.TabIndex = 0;
             label2.Text = resources.GetString("label2.Text");
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // buttonSair
             // 
+            buttonSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonSair.BackColor = Color.Gray;
             buttonSair.FlatStyle = FlatStyle.Flat;
             buttonSair.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -144,7 +151,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

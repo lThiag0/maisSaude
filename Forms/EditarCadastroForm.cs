@@ -283,7 +283,7 @@ namespace maisSaude.Forms
                 textBoxCidade.Text != "" &&
                 boxDataDeNascimento.MaskCompleted &&
                 textBoxProfissao.Text != "" &&
-                boxRg.MaskCompleted &&
+                boxRg.Text != "" &&
                 textBoxExpeditor.Text != "" &&
                 textBoxEndereco.Text != "" &&
                 comboBoxEstado.SelectedIndex >= 0 &&
@@ -334,11 +334,18 @@ namespace maisSaude.Forms
                         if (File.Exists(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg"))
                         {
                             // Tem que iniciar o aplicativo como adm 
-                            File.Delete(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg");
-                            pictureBoxFoto3x4.Image.Save(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg", ImageFormat.Jpeg);
+                            try
+                            {
+                                File.Delete(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg");
+                                pictureBoxFoto3x4.Image.Save(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg", ImageFormat.Jpeg);
+                            }
+                            catch (Exception exr)
+                            {
+                                MessageBox.Show("Erro ao deletar a foto 3x4 antiga: " + exr.Message, "Opss, ocorreu um error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
-                        { 
+                        {
                             pictureBoxFoto3x4.Image.Save(Application.StartupPath + "/BancoDeDados/Fotos/" + ConverterCPF(boxCpf.Text) + ".jpg", ImageFormat.Jpeg);
                         }
                     }
@@ -404,30 +411,89 @@ namespace maisSaude.Forms
 
         private void buttonDeletar_Click(object sender, EventArgs e)
         {
-            if (idCadastro.Text != "")
-            {
-                if (File.Exists(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml"))
-                {
-                    groupBox2.Enabled = false;
-                    var xmlDoc = XDocument.Load(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
-                    var element = (
-                        from x in xmlDoc.Root.Elements("pessoa")
-                        where x.Attribute("id").Value == idCadastro.Text
-                        select x
-                        ).FirstOrDefault();
-                    element.Remove();
-                    xmlDoc.Save(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
+            var message = "Ao deletar um cadastro você perdera todos os dados desse cadastro para sempre, deseja continuar?";
+            var title = "+Saude Alerta";
+            var result = MessageBox.Show(
+                message,
+                title,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
-                    MessageBox.Show("Cadastro com id " + idCadastro.Text + " foi excluido com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    formInicial.adicionarConsoleLog("Cadastro com id " + idCadastro.Text + " foi excluido com sucesso!");
-                    Close();
-                }
-                else { MessageBox.Show("Não foi encontrado o arquivo do banco de dados.", "Opss", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    if (idCadastro.Text != "")
+                    {
+                        if (File.Exists(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml"))
+                        {
+                            groupBox2.Enabled = false;
+                            var xmlDoc = XDocument.Load(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
+                            var element = (
+                                from x in xmlDoc.Root.Elements("pessoa")
+                                where x.Attribute("id").Value == idCadastro.Text
+                                select x
+                                ).FirstOrDefault();
+                            element.Remove();
+                            xmlDoc.Save(Application.StartupPath + "/BancoDeDados/Dados/DadosGerais.xml");
+
+                            MessageBox.Show("Cadastro com id " + idCadastro.Text + " foi excluido com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            formInicial.adicionarConsoleLog("Cadastro com id " + idCadastro.Text + " foi excluido com sucesso!");
+                            Close();
+                        }
+                        else { MessageBox.Show("Não foi encontrado o arquivo do banco de dados.", "Opss", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                    }
+                    else { MessageBox.Show("Não foi encontrado esse id no banco de dados.", "Opss", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                    break;
+                case DialogResult.No:
+                    //Nada aqui
+                    break;
+                default:
+                    MessageBox.Show("Escolha uma das opções disponivel!");
+                    break;
             }
-            else { MessageBox.Show("Não foi encontrado esse id no banco de dados.", "Opss", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
         }
 
         private void EditarCadastroForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boxRg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
